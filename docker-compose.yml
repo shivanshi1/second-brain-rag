@@ -1,0 +1,47 @@
+x-app: &app
+  build: .
+  environment:
+    DATABASE_URL: postgresql+psycopg://secondbrain:secondbrain@db:5432/secondbrain
+    REDIS_URL: redis://redis:6379/0
+    UPLOAD_DIR: /app/data/uploads
+    # Ollama runs on your host machine (free, local): https://ollama.com
+    OLLAMA_BASE_URL: http://host.docker.internal:11434
+  extra_hosts:
+    - "host.docker.internal:host-gateway"
+  volumes:
+    - ./data:/app/data
+  depends_on:
+    db:
+      condition: service_healthy
+    redis:
+      condition: service_started
+
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_USER: secondbrain
+      POSTGRES_PASSWORD: secondbrain
+      POSTGRES_DB: secondbrain
+    ports: ["5432:5432"]
+    volumes: [pgdata:/var/lib/postgresql/data]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U secondbrain"]
+      interval: 5s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+    ports: ["6379:6379"]
+
+  api:
+    <<: *app
+    command: sh -c "alembic upgrade head && uvicorn secondbrain.api.main:app --host 0.0.0.0 --port 8000"
+    ports: ["8000:8000"]
+
+  worker:
+    <<: *app
+    command: celery -A secondbrain.ingestion.celery_app.celery_app worker --loglevel=INFO --concurrency=1
+
+volumes:
+  pgdata:

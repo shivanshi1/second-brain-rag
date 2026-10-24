@@ -1,0 +1,11 @@
+# Golden set for retrieval/generation evaluation (Phase 3).
+# Aim for 50-100 questions. Include unanswerable ones to test strict-mode refusals.
+- question: "When is a monolith a better choice than microservices?"
+  expected_sources: ["Microservices vs Monolith"]
+  reference_answer: "When the team and domain are small, since it is simpler to build and deploy."
+- question: "How do I schedule periodic tasks in Celery?"
+  expected_sources: ["Celery Basics"]
+  reference_answer: "Use celery beat, a cron-like scheduler."
+- question: "What is the capital of Australia?"
+  expected_sources: []
+  answerable: false   # should be refused in strict mode
