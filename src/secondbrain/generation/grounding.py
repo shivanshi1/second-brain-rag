@@ -64,7 +64,7 @@ def verify_answer_support(
     The entailment score is a model estimate, not a proof of factual support. A
     sentence is supported when at least one cited passage reaches ``threshold``.
     """
-    threshold = settings.nli_entailment_threshold if threshold is None else threshold
+    cutoff = settings.nli_entailment_threshold if threshold is None else threshold
     blocks = {index: hit.text for index, hit in enumerate(hits, start=1)}
     pieces = [piece.strip() for piece in SENTENCE_RE.split(answer.strip()) if piece.strip()]
     citation_numbers = [int(number) for number in CITATION_RE.findall(answer)]
@@ -100,7 +100,7 @@ def verify_answer_support(
                 and bool(CITATION_RE.sub("", piece).strip())
                 and all(number in blocks for number in cited)
                 and best_scores[index] is not None
-                and best_scores[index] >= threshold
+                and best_scores[index] >= cutoff
             ),
             cited_blocks=cited,
             entailment_score=best_scores[index],
