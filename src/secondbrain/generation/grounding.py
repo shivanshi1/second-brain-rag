@@ -85,7 +85,7 @@ def verify_answer_support(
                 pairs.append((blocks[block_number], clean))
                 pair_sentence_indexes.append(sentence_index)
 
-    scores = _predict_entailment_scores(pairs)
+    scores = _predict_entailment_scores(pairs) if pairs else []
     best_scores: list[float | None] = [None] * len(sentence_data)
     for sentence_index, score in zip(pair_sentence_indexes, scores, strict=True):
         current = best_scores[sentence_index]
