@@ -99,8 +99,8 @@ def verify_answer_support(
                 bool(cited)
                 and bool(CITATION_RE.sub("", piece).strip())
                 and all(number in blocks for number in cited)
-                and (score := best_scores[index]) is not None
-                and score >= cutoff
+                and (sentence_score := best_scores[index]) is not None
+                and sentence_score >= cutoff
             ),
             cited_blocks=cited,
             entailment_score=best_scores[index],
