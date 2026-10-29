@@ -5,9 +5,12 @@ __pycache__/
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
+AGENTS.md
 .coverage
 htmlcov/
 dist/
 *.egg-info/
 data/uploads/*
 !data/uploads/.gitkeep
+Second Brain RAG Implementation Plan.md
+terminal output.txt

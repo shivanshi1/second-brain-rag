@@ -1,6 +1,7 @@
 from functools import lru_cache
 from pathlib import Path
 
+from pydantic import Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -18,6 +19,9 @@ class Settings(BaseSettings):
     embedding_dim: int = 384
     chunk_max_words: int = 300
     chunk_overlap_words: int = 40
+
+    nli_model: str = "cross-encoder/nli-deberta-v3-small"
+    nli_entailment_threshold: float = Field(default=0.75, ge=0.0, le=1.0)
 
     llm_provider: str = "ollama"
     ollama_base_url: str = "http://localhost:11434"

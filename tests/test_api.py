@@ -9,11 +9,6 @@ def test_health():
     assert client.get("/health").json() == {"status": "ok"}
 
 
-def test_ask_is_not_implemented_yet():
-    r = client.post("/ask", json={"question": "hi"})
-    assert r.status_code == 501
-
-
 def test_upload_rejects_unknown_extension():
     r = client.post("/documents", files={"file": ("evil.exe", b"x")})
     assert r.status_code == 415

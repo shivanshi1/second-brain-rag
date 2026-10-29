@@ -33,7 +33,7 @@ class AskRequest(BaseModel):
     question: str = Field(min_length=1)
     filters: FilterSpec = Field(default_factory=FilterSpec)
     strict: bool = True  # "answer only from my documents"
-    top_k: int = Field(default=6, ge=1, le=20)
+    top_k: int = Field(default=3, ge=1, le=20)
 
 
 class Citation(BaseModel):
@@ -46,7 +46,15 @@ class Citation(BaseModel):
 class AskResponse(BaseModel):
     answer: str
     citations: list[Citation]
-    grounded: bool
+    citations_valid: bool
+    supported_ratio: float = Field(
+        ge=0.0,
+        le=1.0,
+        description=(
+            "Share of sentences in the final model draft that passed the NLI check, "
+            "measured before strict-mode filtering. This is an estimate, not proof."
+        ),
+    )
     latency_ms: int
 
 

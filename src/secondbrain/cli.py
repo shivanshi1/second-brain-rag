@@ -52,5 +52,31 @@ def search(query: str, top_k: int = 5, api: str = API, key: str = KEY) -> None:
         typer.echo(f"\n[{hit['score']:.3f}] {hit['document_title']} {where}\n{hit['text'][:300]}")
 
 
+@app.command()
+def ask(
+    question: str,
+    top_k: int = typer.Option(3, min=1, max=20),
+    strict: bool = typer.Option(True, "--strict/--open", help="Answer only from retrieved notes."),
+    api: str = API,
+    key: str = KEY,
+) -> None:
+    """Ask a question across your notes and print the answer with source citations."""
+    headers = {"X-API-Key": key} if key else {}
+    r = httpx.post(
+        f"{api}/ask",
+        json={"question": question, "top_k": top_k, "strict": strict},
+        headers=headers,
+        timeout=180,
+    )
+    r.raise_for_status()
+    result = r.json()
+    typer.echo(result["answer"])
+    typer.echo(f"\nCitations valid: {result['citations_valid']}")
+    typer.echo(f"Sentence support: {result['supported_ratio']:.0%}")
+    for citation in result["citations"]:
+        where = f" > {citation['heading']}" if citation["heading"] else ""
+        typer.echo(f"\n[{citation['n']}] {citation['document']}{where}\n{citation['snippet']}")
+
+
 if __name__ == "__main__":
     app()
