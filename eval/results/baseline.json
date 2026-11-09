@@ -1,0 +1,470 @@
+{
+  "api_url": "http://localhost:8000",
+  "top_k": 5,
+  "repeats": 3,
+  "case_count": 6,
+  "summary": {
+    "answerable_retrieval_recall_at_k": 1.0,
+    "answerable_mrr": 1.0,
+    "answerable_ndcg": 1.0,
+    "answerable_citation_valid_rate": 0.75,
+    "answerable_mean_nli_supported_ratio": 0.625,
+    "answerable_refusal_rate": 0.25,
+    "unanswerable_correct_refusal_rate": 1.0,
+    "exact_answer_consistency": 1.0,
+    "mean_ask_latency_ms": 38047.77777777778
+  },
+  "cases": [
+    {
+      "id": "monolith-small-team",
+      "question": "When should I use a monolith?",
+      "answerable": true,
+      "expected_sources": [
+        "Microservices vs Monolith"
+      ],
+      "unique_answer_count": 1,
+      "answers_consistent": true,
+      "runs": [
+        {
+          "repeat": 1,
+          "retrieved_sources": [
+            "Microservices vs Monolith",
+            "Celery Basics",
+            "Celery Basics",
+            "Microservices vs Monolith",
+            "Celery Basics"
+          ],
+          "retrieval": {
+            "recall": 1.0,
+            "mrr": 1.0,
+            "ndcg": 1.0
+          },
+          "refused": false,
+          "refusal_correct": true,
+          "citations_valid": true,
+          "supported_ratio": 1.0,
+          "latency_ms": 66291,
+          "answer": "A monolith is suitable when the team and domain are small [1]. When the team and domain are small, a monolith is simpler to build, test and deploy [1]."
+        },
+        {
+          "repeat": 2,
+          "retrieved_sources": [
+            "Microservices vs Monolith",
+            "Celery Basics",
+            "Celery Basics",
+            "Microservices vs Monolith",
+            "Celery Basics"
+          ],
+          "retrieval": {
+            "recall": 1.0,
+            "mrr": 1.0,
+            "ndcg": 1.0
+          },
+          "refused": false,
+          "refusal_correct": true,
+          "citations_valid": true,
+          "supported_ratio": 1.0,
+          "latency_ms": 55541,
+          "answer": "A monolith is suitable when the team and domain are small [1]. When the team and domain are small, a monolith is simpler to build, test and deploy [1]."
+        },
+        {
+          "repeat": 3,
+          "retrieved_sources": [
+            "Microservices vs Monolith",
+            "Celery Basics",
+            "Celery Basics",
+            "Microservices vs Monolith",
+            "Celery Basics"
+          ],
+          "retrieval": {
+            "recall": 1.0,
+            "mrr": 1.0,
+            "ndcg": 1.0
+          },
+          "refused": false,
+          "refusal_correct": true,
+          "citations_valid": true,
+          "supported_ratio": 1.0,
+          "latency_ms": 54253,
+          "answer": "A monolith is suitable when the team and domain are small [1]. When the team and domain are small, a monolith is simpler to build, test and deploy [1]."
+        }
+      ]
+    },
+    {
+      "id": "microservices-tradeoffs",
+      "question": "What are the trade-offs of microservices?",
+      "answerable": true,
+      "expected_sources": [
+        "Microservices vs Monolith"
+      ],
+      "unique_answer_count": 1,
+      "answers_consistent": true,
+      "runs": [
+        {
+          "repeat": 1,
+          "retrieved_sources": [
+            "Microservices vs Monolith",
+            "Microservices vs Monolith",
+            "Celery Basics",
+            "Celery Basics",
+            "Celery Basics"
+          ],
+          "retrieval": {
+            "recall": 1.0,
+            "mrr": 1.0,
+            "ndcg": 1.0
+          },
+          "refused": false,
+          "refusal_correct": true,
+          "citations_valid": true,
+          "supported_ratio": 1.0,
+          "latency_ms": 22073,
+          "answer": "Microservices add network failures, distributed tracing needs, and operational overhead [1]. A monolith is simpler to build, test, and deploy while the team and domain are small [2]."
+        },
+        {
+          "repeat": 2,
+          "retrieved_sources": [
+            "Microservices vs Monolith",
+            "Microservices vs Monolith",
+            "Celery Basics",
+            "Celery Basics",
+            "Celery Basics"
+          ],
+          "retrieval": {
+            "recall": 1.0,
+            "mrr": 1.0,
+            "ndcg": 1.0
+          },
+          "refused": false,
+          "refusal_correct": true,
+          "citations_valid": true,
+          "supported_ratio": 1.0,
+          "latency_ms": 15057,
+          "answer": "Microservices add network failures, distributed tracing needs, and operational overhead [1]. A monolith is simpler to build, test, and deploy while the team and domain are small [2]."
+        },
+        {
+          "repeat": 3,
+          "retrieved_sources": [
+            "Microservices vs Monolith",
+            "Microservices vs Monolith",
+            "Celery Basics",
+            "Celery Basics",
+            "Celery Basics"
+          ],
+          "retrieval": {
+            "recall": 1.0,
+            "mrr": 1.0,
+            "ndcg": 1.0
+          },
+          "refused": false,
+          "refusal_correct": true,
+          "citations_valid": true,
+          "supported_ratio": 1.0,
+          "latency_ms": 15739,
+          "answer": "Microservices add network failures, distributed tracing needs, and operational overhead [1]. A monolith is simpler to build, test, and deploy while the team and domain are small [2]."
+        }
+      ]
+    },
+    {
+      "id": "celery-periodic-tasks",
+      "question": "How do I schedule periodic tasks in Celery?",
+      "answerable": true,
+      "expected_sources": [
+        "Celery Basics"
+      ],
+      "unique_answer_count": 1,
+      "answers_consistent": true,
+      "runs": [
+        {
+          "repeat": 1,
+          "retrieved_sources": [
+            "Celery Basics",
+            "Celery Basics",
+            "Celery Basics",
+            "Microservices vs Monolith",
+            "Microservices vs Monolith"
+          ],
+          "retrieval": {
+            "recall": 1.0,
+            "mrr": 1.0,
+            "ndcg": 1.0
+          },
+          "refused": false,
+          "refusal_correct": true,
+          "citations_valid": true,
+          "supported_ratio": 0.5,
+          "latency_ms": 57458,
+          "answer": "Celery beat is used to schedule periodic tasks, similar to cron [1]."
+        },
+        {
+          "repeat": 2,
+          "retrieved_sources": [
+            "Celery Basics",
+            "Celery Basics",
+            "Celery Basics",
+            "Microservices vs Monolith",
+            "Microservices vs Monolith"
+          ],
+          "retrieval": {
+            "recall": 1.0,
+            "mrr": 1.0,
+            "ndcg": 1.0
+          },
+          "refused": false,
+          "refusal_correct": true,
+          "citations_valid": true,
+          "supported_ratio": 0.5,
+          "latency_ms": 53309,
+          "answer": "Celery beat is used to schedule periodic tasks, similar to cron [1]."
+        },
+        {
+          "repeat": 3,
+          "retrieved_sources": [
+            "Celery Basics",
+            "Celery Basics",
+            "Celery Basics",
+            "Microservices vs Monolith",
+            "Microservices vs Monolith"
+          ],
+          "retrieval": {
+            "recall": 1.0,
+            "mrr": 1.0,
+            "ndcg": 1.0
+          },
+          "refused": false,
+          "refusal_correct": true,
+          "citations_valid": true,
+          "supported_ratio": 0.5,
+          "latency_ms": 31852,
+          "answer": "Celery beat is used to schedule periodic tasks, similar to cron [1]."
+        }
+      ]
+    },
+    {
+      "id": "celery-retries",
+      "question": "How can I make Celery tasks resilient to errors?",
+      "answerable": true,
+      "expected_sources": [
+        "Celery Basics"
+      ],
+      "unique_answer_count": 1,
+      "answers_consistent": true,
+      "runs": [
+        {
+          "repeat": 1,
+          "retrieved_sources": [
+            "Celery Basics",
+            "Celery Basics",
+            "Celery Basics",
+            "Microservices vs Monolith",
+            "Microservices vs Monolith"
+          ],
+          "retrieval": {
+            "recall": 1.0,
+            "mrr": 1.0,
+            "ndcg": 1.0
+          },
+          "refused": true,
+          "refusal_correct": false,
+          "citations_valid": false,
+          "supported_ratio": 0.0,
+          "latency_ms": 33171,
+          "answer": "I can't find this in your documents."
+        },
+        {
+          "repeat": 2,
+          "retrieved_sources": [
+            "Celery Basics",
+            "Celery Basics",
+            "Celery Basics",
+            "Microservices vs Monolith",
+            "Microservices vs Monolith"
+          ],
+          "retrieval": {
+            "recall": 1.0,
+            "mrr": 1.0,
+            "ndcg": 1.0
+          },
+          "refused": true,
+          "refusal_correct": false,
+          "citations_valid": false,
+          "supported_ratio": 0.0,
+          "latency_ms": 46562,
+          "answer": "I can't find this in your documents."
+        },
+        {
+          "repeat": 3,
+          "retrieved_sources": [
+            "Celery Basics",
+            "Celery Basics",
+            "Celery Basics",
+            "Microservices vs Monolith",
+            "Microservices vs Monolith"
+          ],
+          "retrieval": {
+            "recall": 1.0,
+            "mrr": 1.0,
+            "ndcg": 1.0
+          },
+          "refused": true,
+          "refusal_correct": false,
+          "citations_valid": false,
+          "supported_ratio": 0.0,
+          "latency_ms": 39060,
+          "answer": "I can't find this in your documents."
+        }
+      ]
+    },
+    {
+      "id": "unanswerable-australia-capital",
+      "question": "What is the capital of Australia?",
+      "answerable": false,
+      "expected_sources": [],
+      "unique_answer_count": 1,
+      "answers_consistent": true,
+      "runs": [
+        {
+          "repeat": 1,
+          "retrieved_sources": [
+            "Microservices vs Monolith",
+            "Celery Basics",
+            "Celery Basics",
+            "Celery Basics",
+            "Microservices vs Monolith"
+          ],
+          "retrieval": {
+            "recall": null,
+            "mrr": null,
+            "ndcg": null
+          },
+          "refused": true,
+          "refusal_correct": true,
+          "citations_valid": false,
+          "supported_ratio": 0.0,
+          "latency_ms": 31314,
+          "answer": "I can't find this in your documents."
+        },
+        {
+          "repeat": 2,
+          "retrieved_sources": [
+            "Microservices vs Monolith",
+            "Celery Basics",
+            "Celery Basics",
+            "Celery Basics",
+            "Microservices vs Monolith"
+          ],
+          "retrieval": {
+            "recall": null,
+            "mrr": null,
+            "ndcg": null
+          },
+          "refused": true,
+          "refusal_correct": true,
+          "citations_valid": false,
+          "supported_ratio": 0.0,
+          "latency_ms": 25399,
+          "answer": "I can't find this in your documents."
+        },
+        {
+          "repeat": 3,
+          "retrieved_sources": [
+            "Microservices vs Monolith",
+            "Celery Basics",
+            "Celery Basics",
+            "Celery Basics",
+            "Microservices vs Monolith"
+          ],
+          "retrieval": {
+            "recall": null,
+            "mrr": null,
+            "ndcg": null
+          },
+          "refused": true,
+          "refusal_correct": true,
+          "citations_valid": false,
+          "supported_ratio": 0.0,
+          "latency_ms": 27951,
+          "answer": "I can't find this in your documents."
+        }
+      ]
+    },
+    {
+      "id": "unanswerable-pgvector-license",
+      "question": "What license does pgvector use?",
+      "answerable": false,
+      "expected_sources": [],
+      "unique_answer_count": 1,
+      "answers_consistent": true,
+      "runs": [
+        {
+          "repeat": 1,
+          "retrieved_sources": [
+            "Celery Basics",
+            "Celery Basics",
+            "Microservices vs Monolith",
+            "Celery Basics",
+            "Microservices vs Monolith"
+          ],
+          "retrieval": {
+            "recall": null,
+            "mrr": null,
+            "ndcg": null
+          },
+          "refused": true,
+          "refusal_correct": true,
+          "citations_valid": false,
+          "supported_ratio": 0.0,
+          "latency_ms": 43233,
+          "answer": "I can't find this in your documents."
+        },
+        {
+          "repeat": 2,
+          "retrieved_sources": [
+            "Celery Basics",
+            "Celery Basics",
+            "Microservices vs Monolith",
+            "Celery Basics",
+            "Microservices vs Monolith"
+          ],
+          "retrieval": {
+            "recall": null,
+            "mrr": null,
+            "ndcg": null
+          },
+          "refused": true,
+          "refusal_correct": true,
+          "citations_valid": false,
+          "supported_ratio": 0.0,
+          "latency_ms": 32544,
+          "answer": "I can't find this in your documents."
+        },
+        {
+          "repeat": 3,
+          "retrieved_sources": [
+            "Celery Basics",
+            "Celery Basics",
+            "Microservices vs Monolith",
+            "Celery Basics",
+            "Microservices vs Monolith"
+          ],
+          "retrieval": {
+            "recall": null,
+            "mrr": null,
+            "ndcg": null
+          },
+          "refused": true,
+          "refusal_correct": true,
+          "citations_valid": false,
+          "supported_ratio": 0.0,
+          "latency_ms": 34053,
+          "answer": "I can't find this in your documents."
+        }
+      ]
+    }
+  ],
+  "metric_notes": {
+    "retrieval": "Source-title relevance; recall is the fraction of expected titles found in top-k.",
+    "supported_ratio": "The API's NLI estimate, not a human judgment or proof of factuality.",
+    "refusal": "Exact match to the configured strict refusal sentence."
+  }
+}

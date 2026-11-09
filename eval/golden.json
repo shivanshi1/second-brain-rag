@@ -1,0 +1,40 @@
+[
+  {
+    "id": "monolith-small-team",
+    "question": "When should I use a monolith?",
+    "expected_sources": ["Microservices vs Monolith"],
+    "reference_answer": "A monolith is simpler to build, test, and deploy while the team and domain are small."
+  },
+  {
+    "id": "microservices-tradeoffs",
+    "question": "What are the trade-offs of microservices?",
+    "expected_sources": ["Microservices vs Monolith"],
+    "reference_answer": "They allow independent deployment and scaling, but add network failures, distributed tracing needs, and operational overhead."
+  },
+  {
+    "id": "celery-periodic-tasks",
+    "question": "How do I schedule periodic tasks in Celery?",
+    "expected_sources": ["Celery Basics"],
+    "reference_answer": "Celery beat triggers periodic tasks, similar to cron."
+  },
+  {
+    "id": "celery-retries",
+    "question": "How can I make Celery tasks resilient to errors?",
+    "expected_sources": ["Celery Basics"],
+    "reference_answer": "Use autoretry_for and exponential backoff."
+  },
+  {
+    "id": "unanswerable-australia-capital",
+    "question": "What is the capital of Australia?",
+    "expected_sources": [],
+    "reference_answer": "",
+    "answerable": false
+  },
+  {
+    "id": "unanswerable-pgvector-license",
+    "question": "What license does pgvector use?",
+    "expected_sources": [],
+    "reference_answer": "",
+    "answerable": false
+  }
+]
